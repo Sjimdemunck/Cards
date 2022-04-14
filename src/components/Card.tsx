@@ -4,32 +4,36 @@ import styled from 'styled-components';
 
 const Title = styled.h1`
     font-size: 1.5em;
+    margin: .25em;
     text-align: center;
     color: palevioletred;
 `;
 
 const CardWrapper = styled.div`
     display: flex;
+    border-radius: 5px;
+    border: 1px solid;
+    padding: 15px;
+    box-shadow: 3px 7px grey;
+    flex-flow: column;
     width: 33%;
+    margin-bottom: 30px;
 `
 
 const ImageWrapper = styled.div`
     display: flex;
-    
 `
 
-
-
 interface ICard {
+    id: number,
     title: string,
     image: string,
-    altText: string,
-    text: string,
+    description: string,
     weight: string,
     reps: number,
 }
 
-const Card = ({ title, image, altText, text, weight, reps }: ICard ) => {
+export const Card = ({ title, image, description, weight, reps }: ICard ) => {
     return (
         <CardWrapper>
             <Title>
@@ -42,7 +46,7 @@ const Card = ({ title, image, altText, text, weight, reps }: ICard ) => {
                 {reps}
             </span>
             <ImageWrapper >
-                <img src={image} alt={altText}/>
+                <img src={image} />
             </ImageWrapper>
         </CardWrapper>
     )
