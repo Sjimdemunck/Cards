@@ -15,9 +15,7 @@ export default function SimplePaper() {
                 },
             }}
         >
-            <Paper elevation={0} />
             <Paper />
-            <Paper elevation={3} />
         </Box>
     );
 }
